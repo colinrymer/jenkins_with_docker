@@ -1,0 +1,9 @@
+---
+- name: jenkins user in docker group
+  user: name=jenkins group=docker append=yes
+
+- name: remove nginx default config
+  command: rm /etc/nginx/sites-enabled/default
+  args:
+    removes: /etc/nginx/sites-enabled/default
+

@@ -1,0 +1,18 @@
+- hosts: all
+
+  remote_user: root
+
+  pre_tasks:
+    - apt: update_cache=yes
+
+  roles:
+    - ANXS.nginx
+    - Stouts.jenkins
+    - angstwad.docker_ubuntu
+    - security
+    - jenkins
+
+  vars:
+    jenkins_proxy: nginx
+    jenkins_proxy_hostname: jenkins.colinrymer.com
+
